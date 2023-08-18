@@ -1,7 +1,15 @@
 import './App.css';
+import React from 'react';
+
+import InitialComponent from './components/initialcomponent.component';
 
 const App = () => {
-  return(<h1>Hi</h1>);
-}
+  
+    return (
+      <div>
+        <InitialComponent />
+      </div>
+    );
+  };
 
 export default App;
