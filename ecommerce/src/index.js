@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { SearchBoxContentProvider } from './contexts/global-search-box.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <SearchBoxContentProvider>
+        <App />
+      </SearchBoxContentProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
