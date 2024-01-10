@@ -44,7 +44,11 @@ const ItemGridComponent = () => {
         },                        
     ];
 
-    const { addToCart } = useContext(ShoppingCartContext);
+    const { currShoppingCartItems, addToCart } = useContext(ShoppingCartContext);
+
+    const processAddToCart = (item) => {
+        addToCart(item);
+    }
 
     return(
         <div class="container">
@@ -57,7 +61,7 @@ const ItemGridComponent = () => {
                         <p>{ob.name}</p>
                         <p>{ob.description}</p>
                         <p>{ob.price}</p>
-                        <button onClick = {() => addToCart(ob)}>
+                        <button onClick = {() => processAddToCart(ob)}>
                             Add {ob.id}, {ob.name} to Cart
                         </button>
                         
